@@ -32,4 +32,4 @@ You can find instructions on the Raspberry Pi website [here](https://www.raspber
 
 ## TODO
 
-Look at repackaging everything into an extention to DockerPi so the expect the whole thing runs in the container.
+Look at repackaging everything into an extention to DockerPi so the whole thing runs in the container.
