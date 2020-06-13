@@ -75,7 +75,7 @@ expect "# "
 send "echo libcomposite >> /etc/modules\n"
 
 expect "# "
-send "echo denyinterfaces usb0 >> /etc/dhcpd.conf\n"
+send "echo denyinterfaces usb0 >> /etc/dhcpcd.conf\n"
 
 expect "# "
 send "poweroff\n"
