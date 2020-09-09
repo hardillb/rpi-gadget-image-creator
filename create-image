@@ -18,9 +18,9 @@ set imagePath [file join $cwd $imageName]
 puts $imageName
 puts $imagePath\n
 
-spawn docker run -i --rm -v $imagePath:/sdcard/filesystem.img lukechilds/dockerpi:vm
+spawn docker run -it --rm -v $imagePath:/sdcard/filesystem.img lukechilds/dockerpi:vm
 
-expect "login: "
+expect "raspberrypi login: "
 send "pi\n"
 expect "Password: "
 send "raspberry\n"
