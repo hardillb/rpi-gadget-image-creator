@@ -31,13 +31,13 @@ ln -s functions/ecm.usb0 configs/c.1/
 mkdir -p functions/acm.usb0
 ln -s functions/acm.usb0 configs/c.1/
 
-mkdir -p functions/mass_storage.usb0
-echo 0 > functions/mass_storage.usb0/stall
-echo 0 > functions/mass_storage.usb0/lun.0/cdrom
-echo 1 > functions/mass_storage.usb0/lun.0/ro
-echo 0 > functions/mass_storage.usb0/lun.0/nofua
-echo /opt/disk.img > functions/mass_storage.usb0/lun.0/file
-ln -s functions/mass_storage.usb0 configs/c.1/
+#mkdir -p functions/mass_storage.usb0
+#echo 0 > functions/mass_storage.usb0/stall
+#echo 0 > functions/mass_storage.usb0/lun.0/cdrom
+#echo 1 > functions/mass_storage.usb0/lun.0/ro
+#echo 0 > functions/mass_storage.usb0/lun.0/nofua
+#echo /opt/disk.img > functions/mass_storage.usb0/lun.0/file
+#ln -s functions/mass_storage.usb0 configs/c.1/
 
 
 udevadm settle -t 5 || :
