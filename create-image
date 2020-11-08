@@ -78,6 +78,9 @@ expect "# "
 send "echo denyinterfaces usb0 >> /etc/dhcpcd.conf\n"
 
 expect "# "
+send "sudo systemctl enable getty@ttyGS0.service	"
+
+expect "# "
 send "poweroff\n"
 
 interact

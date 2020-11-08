@@ -51,6 +51,8 @@ echo "${host_mac}" > ${gadget}/functions/rndis.usb0/host_addr
 echo "${ms_compat_id}" > ${gadget}/functions/rndis.usb0/os_desc/interface.rndis/compatible_id
 echo "${ms_subcompat_id}" > ${gadget}/functions/rndis.usb0/os_desc/interface.rndis/sub_compatible_id
 
+mkdir -p ${gadget}/functions/acm.usb0
+
 #mkdir ${gadget}/configs/c.2
 #echo "${attr}" > ${gadget}/configs/c.2/bmAttributes
 #echo "${power}" > ${gadget}/configs/c.2/MaxPower
@@ -62,6 +64,7 @@ echo "${ms_subcompat_id}" > ${gadget}/functions/rndis.usb0/os_desc/interface.rnd
 
 ln -s ${gadget}/configs/c.1 ${gadget}/os_desc
 ln -s ${gadget}/functions/rndis.usb0 ${gadget}/configs/c.1
+ln -s ${gadget}/functions/acm.usb0 ${gadget}/configs/c.1/
 
 #ln -s ${gadget}/functions/ecm.usb0 ${gadget}/configs/c.2
 
