@@ -1,4 +1,5 @@
-#!/usr/bin/expect -f
+#!/usr/bin/expect --
+
 set timeout -1
 proc slurp {file} {
     set fh [open $file r]
@@ -6,7 +7,16 @@ proc slurp {file} {
     close $fh
     return $ret
 }
-set imageName [lindex $argv 0]
+
+if { $argc == 1 } {
+  set imageName [lindex $argv 0]
+  set 64bit "false"
+  puts "32bit"
+} elseif { $argc == 2 } {
+  set imageName [lindex $argv 1]
+  set 64bit "true"
+  puts "64bit"
+}
 
 if {[string trimleft $imageName] eq ""} {
   puts "No Image file provided"
@@ -18,7 +28,11 @@ set imagePath [file join $cwd $imageName]
 puts $imageName
 puts $imagePath\n
 
-spawn docker run -it --rm -v $imagePath:/sdcard/filesystem.img lukechilds/dockerpi:vm
+if { $64bit == "true" } {
+  spawn docker run -it --rm -v $imagePath:/sdcard/filesystem.img lukechilds/dockerpi:vm pi3
+} else {
+  spawn docker run -it --rm -v $imagePath:/sdcard/filesystem.img lukechilds/dockerpi:vm 
+}
 
 expect "raspberrypi login: "
 send "pi\n"
