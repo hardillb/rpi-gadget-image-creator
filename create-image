@@ -29,9 +29,9 @@ puts $imageName
 puts $imagePath\n
 
 if { $64bit == "true" } {
-  spawn docker run -it --rm -v $imagePath:/sdcard/filesystem.img lukechilds/dockerpi:vm pi3
+  spawn docker run --name dockerpi -it --rm -v $imagePath:/sdcard/filesystem.img lukechilds/dockerpi:vm pi3
 } else {
-  spawn docker run -it --rm -v $imagePath:/sdcard/filesystem.img lukechilds/dockerpi:vm 
+  spawn docker run --name dockerpi -it --rm -v $imagePath:/sdcard/filesystem.img lukechilds/dockerpi:vm 
 }
 
 expect "raspberrypi login: "
@@ -97,4 +97,6 @@ send "sudo systemctl enable getty@ttyGS0.service\n"
 expect "# "
 send "poweroff\n"
 
-interact
+expect "Reboot failed -- System halted"
+exec docker stop dockerpi
+exit
