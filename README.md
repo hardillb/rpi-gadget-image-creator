@@ -16,7 +16,7 @@ Currently only tested on Linux and with Docker Desktop + WSL on Windows 10, but 
 Clone the repo
 
 ```
-git clone git@github.com:hardillb/rpi-gadget-image-creator.git
+git clone https://github.com/hardillb/rpi-gadget-image-creator.git
 ```
 
 Copy the raspbian lite image into the `rpi-gadget-image-creator`  directory.
