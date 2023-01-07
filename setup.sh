@@ -1,5 +1,14 @@
 #!/bin/bash
 
+if [[ $# -eq 0 ]]; then
+  echo "You must pass a image file"
+  exit
+fi
+
+if [[ $# -eq 2 ]]; then
+  64BIT=1
+fi
+exit
 OFFSET=$(fdisk -l $1 | awk '/^[^ ]*1/{ print $2*512 }')
 mkdir boot
 sudo mount -o loop,offset=$OFFSET $1 boot
@@ -15,4 +24,8 @@ sudo sync
 sudo umount boot
 rmdir boot
 export PASSWORD
-./create-image $1
+if [[ 64BIT eq 1 ]]; then
+  ./create-image -64 $1
+else
+  ./create-image $1
+fi

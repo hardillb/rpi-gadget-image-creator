@@ -24,13 +24,13 @@ Copy the raspbian lite image into the `rpi-gadget-image-creator`  directory.
 ## Running
 
 ```
-./create-image 2019-09-26-raspbian-buster-lite.img
+./setup.sh 2019-09-26-raspbian-buster-lite.img
 ```
 
 To build a 64bit OS image you need to add `-64` before the image name. 64bit versions will run on Pi 3 and Pi 4 hardware.
 
 ```
-./create-image -64 2020-08-20-raspios-buster-arm64.img
+./setup.sh -64 2020-08-20-raspios-buster-arm64.img
 ```
 
 
