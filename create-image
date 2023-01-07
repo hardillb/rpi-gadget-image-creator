@@ -37,7 +37,9 @@ if { $64bit == "true" } {
 expect "raspberrypi login: "
 send "pi\n"
 expect "Password: "
-send "raspberry\n"
+#send "raspberry\n"
+send $env(PASSWORD)
+send "\n"
 
 expect "$ "
 send "sudo apt-get update\n"
