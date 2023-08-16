@@ -1,5 +1,21 @@
-auto usb0
-allow-hotplug usb0
-iface usb0 inet static
+auto br0
+iface br0 inet static
   address 10.55.0.1
   netmask 255.255.255.248
+  bridge_ports usb0 usb1
+  bridge_stp off
+  bridge_fd 0
+  bridge_waitport 0
+
+
+#auto usb0
+#allow-hotplug usb0
+#iface usb0 inet static
+#  address 10.55.0.1
+#  netmask 255.255.255.248
+
+#auto usb1
+#allow-hotplug usb1
+#iface sub1 inet static
+#  address 10.55.1.1
+#  netmask 255.255.255.248

@@ -91,7 +91,7 @@ expect "# "
 send "echo libcomposite >> /etc/modules\n"
 
 expect "# "
-send "echo denyinterfaces usb0 >> /etc/dhcpcd.conf\n"
+send "echo denyinterfaces usb0 usb1 br0 >> /etc/dhcpcd.conf\n"
 
 expect "# "
 send "sudo systemctl enable getty@ttyGS0.service\n"
