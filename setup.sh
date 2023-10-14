@@ -8,8 +8,7 @@ fi
 if [[ $# -eq 2 ]]; then
   64BIT=1
 fi
-exit
-OFFSET=$(fdisk -l $1 | awk '/^[^ ]*1/{ print $2*512 }')
+OFFSET=$(fdisk -l $1 | grep W95 | awk '/^[^ ]*1/{ print $2*512 }')
 mkdir boot
 sudo mount -o loop,offset=$OFFSET $1 boot
 
