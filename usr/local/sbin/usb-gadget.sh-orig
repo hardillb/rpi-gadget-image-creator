@@ -17,7 +17,7 @@ echo "Display-Pi USB Device" > strings/0x409/product
 mkdir -p configs/c.1/strings/0x409
 echo "CDC" > configs/c.1/strings/0x409/configuration
 echo 250 > configs/c.1/MaxPower
-echo 0x80 > configs/c.1/mbAttributes
+echo 0x80 > configs/c.1/bmAttributes
 # Add functions here
 # see gadget configurations below
 # End functions
@@ -27,7 +27,7 @@ HOST="00:dc:c8:f7:75:15" # "HostPC"
 SELF="00:dd:dc:eb:6d:a1" # "BadUSB"
 echo $HOST > functions/ecm.usb0/host_addr
 echo $SELF > functions/ecm.usb0/dev_addr
-ln -s functions/ecm.usb1 configs/c.1/
+ln -s functions/ecm.usb0 configs/c.1/
 
 #RNDIS
 mkdir -p configs/c.2
