@@ -5,6 +5,8 @@ This should work with Raspberry Pi Zero, Zero W and 4.
 
 Currently only tested on Linux and with Docker Desktop + WSL on Windows 10, but should also run on OSx 
 
+Doesn't work with current Bullseye based images
+
 
 ## Requirements
 
