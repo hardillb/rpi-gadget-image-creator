@@ -1,3 +1,9 @@
+# Built into Raspberry Pi OS Trixie now
+
+https://www.raspberrypi.com/news/usb-gadget-mode-in-raspberry-pi-os-ssh-over-usb/
+
+So no need for this (I couldn't get it work for Bullseye or later anyway
+
 # Raspbery Pi USB Gadget Image Builder
 
 A script to add USB Ethernet Gadget configuration to a standard Raspbian Lite SD Card image. 
